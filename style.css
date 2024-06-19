@@ -229,7 +229,7 @@ input{
 }
 .notRead{
 background-image: linear-gradient(225deg, #d04143 0%, #c85052 46%, #FFCC70 100%);
-content: 'Not read';
+opacity: 0.9;
 }
 .removeBook, .okRead, .notRead{
   white-space:nowrap;

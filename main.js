@@ -1,13 +1,16 @@
-function Book( title,author,pages,isRead) {
-  this.title = title,
-  this.author = author,
-  this.pages = pages,
-  this.isRead = isRead
+class Book {
+  constructor(title, author, pages, isRead) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.isRead = isRead;
+  }
+
+  toggleReadStatus() {
+    this.isRead = this.isRead === 'read' ? 'notRead' : 'read';
+  }
 }
 
-Book.prototype.toggleReadStatus = function() {
-  this.isRead = this.isRead === 'read' ? 'notRead' : 'read';
-};
 
 const myLibrary = [
   new Book("Harry Potter", "JK Rowling", 324, "read"),
@@ -46,10 +49,18 @@ myLibrary.push(book);
 
 function displayBooks(){
   library.innerHTML = ''; //clean library
+
 for (let i = 0; i < myLibrary.length; i++) {
   let book = document.createElement('div');
   book.className = 'book';
   book.dataset.value = i;
+
+  // bookDiv.innerHTML = `
+  //     <div>Title:</div><div>${book.title}</div>
+  //     <div>Author:</div><div>${book.author}</div>
+  //     <div>Pages:</div><div>${book.pages}</div>
+  //   `;
+  
   library.appendChild(book);
 
   let bookTitleP = document.createElement('div');

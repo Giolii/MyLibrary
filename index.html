@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>My Library</title>
+</head>
+<body>
+ <h1 class="page-title">My Library</h1>
+ <button class="new-book button-72" role="button">New Book</button>
+ <div class="library">
+ </div>
+ <dialog class="modal" id="modal">
+  <h1 class="modal-title">Add a new book to the Library</h1>
+    <label class="book-title">Title:</label>
+    <input class="book-title-text" type="text">
+    <label class="book-author">Author:</label>
+    <input class="book-author-text" type="text">
+    <label class="book-pages" min="10" max="10000">Pages:</label>
+    <input class="book-pages-text" type="number">
+    <label class="book-read" for="read">Read
+    <input type="radio" id="read" name="isRead" value="read" checked></label>
+    <label class="book-not-read" for="notRead">Not Read
+    <input type="radio" id="notRead" name="isRead" value="notRead"></label>
+    <button class="button" type="submit">Add Book</button>
+</dialog>
+  
+ <script src="main.js"></script>
+</body>
+</html>

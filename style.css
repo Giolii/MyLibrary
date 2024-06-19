@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+PL:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+PL:wght@300&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+/* CSS Button */
+.button-72,.button, .removeBook, .okRead,.notRead{
+  align-items: center;
+  background-color: initial;
+  background-image: linear-gradient(rgba(179, 132, 201, .84), rgba(57, 31, 91, .84) 50%);
+  border-radius: 42px;
+  border-width: 0;
+  box-shadow: rgba(57, 31, 91, 0.24) 0 2px 2px,rgba(179, 132, 201, 0.4) 0 8px 12px;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: flex;
+  font-family: Quicksand,sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  justify-content: center;
+  letter-spacing: .04em;
+  line-height: 16px;
+  margin: 0;
+  padding: 18px 18px;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: rgba(255, 255, 255, 0.4) 0 0 4px,rgba(255, 255, 255, 0.2) 0 0 12px,rgba(57, 31, 91, 0.6) 1px 1px 4px,rgba(57, 31, 91, 0.32) 4px 4px 16px;
+
+}
+
+.button-72:hover, .button:hover{
+  background-image: linear-gradient(#B384C9, #391F5B 50%);
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+/* Start  */
+html{
+  background-color: rgb(240 241 245);
+  background-image: linear-gradient(rgb(210 213 219) 1px, transparent 1px), linear-gradient(to right, rgb(210 213 219) 1px, rgb(240 241 245) 1px);
+  background-size: 20px 20px;
+}
+body{
+  display: grid;
+  gap: 15px;
+  grid-template-columns: 1fr;
+  grid-template-rows: 70px 50px 1fr;
+  font-family: Roboto;
+}
+.library{
+  display: grid;
+  grid-template-columns: 
+  repeat(auto-fit, minmax(150px, 300px));
+  gap: 20px;
+  grid-auto-rows: minmax(150px, 300px);
+place-content: center;
+}
+
+.page-title{
+  text-align: center;
+  font-family: "Playwrite PL";
+  color: white;
+  font-weight: 600;
+  color: #fdfdfe;
+  text-shadow: 0px 0px 5px #b393d3, 0px 0px 10px #b393d3, 0px 0px 10px #b393d3,
+    0px 0px 20px #b393d3;
+}
+
+.new-book{
+  place-self: center;
+}
+
+.book{
+    padding: 20px;
+    border: 3px solid #333333;
+    font-size: 1rem;
+    border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
+    background-color: rgba(142, 197, 252, 1);
+    background-image: linear-gradient(62deg, rgba(142, 197, 252, 1) 0%, rgba(224, 195, 252, 1) 100%);
+    position: relative;
+    margin: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(4,1fr);
+    gap: 10px;
+    word-break: break-word; /* Ensures long words break and wrap */
+    overflow-wrap: break-word; /* Helps to break long words */
+    &::before {
+        content: '';
+        border: 2px solid #353535;
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate3d(-50%, -50%, 0) scale(1.015) rotate(0.5deg);
+        border-radius: 1% 1% 2% 4% / 2% 6% 5% 4%;
+    }
+}
+
+dialog[open]{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 
+  'title title'
+  'book-title book-title-text'
+  'author author-text'
+  'pages pages-text'
+  'read read'
+  'button button';
+  gap: 10px;
+  height: 400px;
+  padding: 1em;
+  max-width: 30ch;
+  box-shadow: 0 0 1em rgb(0 0 0 / .3); 
+  margin: 0;
+  justify-self: center;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 10px;
+  background-color: rgba(75, 1, 50, 0.5);
+  margin-top: 10rem;
+}
+
+  .modal::backdrop {
+    background: rgba(0, 0, 0, 0.5);
+  }
+.modal-title,label{
+  text-align: center;
+  grid-area: title;
+  text-shadow: 0px 0px 5px #b393d3, 0px 0px 10px #b393d3, 0px 0px 10px #b393d3,
+  0px 0px 20px #b393d3;
+  color:white;
+}
+.button{
+  width: 60%;
+  place-self: center;
+  height: 30%;
+}
+.book-title{grid-area: book-title;}
+.book-title-text{grid-area: book-title-text;}
+.book-author{grid-area: author;}
+.book-author-text{grid-area: author-text;}
+.book-pages{grid-area: pages;}
+.book-pages-text{grid-area: pages-text;}
+.book-read{grid-area: read; justify-self: start;}
+.book-not-read{grid-area: read; justify-self: end;}
+.button{grid-area: button;}
+
+input{
+  border-radius: 20px;
+}
+.removeBook{
+  background-image: linear-gradient(rgba(214, 88, 88, 0.84), rgba(140, 1, 1, 0.84) 50%);
+}
+.okRead{
+  background-image: linear-gradient(rgba(88, 214, 136, 0.84), rgba(1, 103, 10, 0.84) 50%);
+}
+.notRead{
+background-image: linear-gradient(225deg, #d04143 0%, #c85052 46%, #FFCC70 100%);
+content: 'Not read';
+}
+.removeBook, .okRead, .notRead{
+  white-space:nowrap;
+  z-index: 2;
+  width: 110px;
+}

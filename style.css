@@ -236,3 +236,10 @@ content: 'Not read';
   z-index: 2;
   width: 110px;
 }
+.book div{
+  color: white;
+  background-color: rgba(46, 0, 52, 0.7); /* Semi-transparent background */
+  padding: 3px; /* Add padding for space around the text */
+  border-radius: 5px; /* Optional: Rounded corners */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add text shadow for readability */
+}
